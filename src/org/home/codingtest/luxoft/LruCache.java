@@ -13,7 +13,6 @@ public class LruCache {
         Integer cacheController = 0;
         for(int i = 0 ; i < inArgs.length ; i++){
             boolean isTrue = checkIfNewIsExisting(cacheArray , inArgs[i]);
-
             if(!isTrue){
                 if(cacheController <= 5 && !maxSize){
                     cacheController++;
@@ -27,17 +26,6 @@ public class LruCache {
                 cacheArray = deleteExistingCache(cacheArray , inArgs[i]);
                 cacheArray = addAtLast(cacheArray , inArgs[i]);
             }
-
-//            if( !isTrue && cacheController == 5 ){
-//                cacheArray = removeFirstCache(cacheArray);
-//                cacheArray = addAtLast(cacheArray , inArgs[i]);
-//            }else if( !isTrue && cacheController <= 5){
-//                cacheController++;
-//                cacheArray = addAtLast(cacheArray , inArgs[i]);
-//            }else{
-//                cacheArray = deleteExistingCache(cacheArray , inArgs[i]);
-//                cacheArray = addAtLast(cacheArray , inArgs[i]);
-//            }
         }
         return convertListToString(cacheArray);
     }
