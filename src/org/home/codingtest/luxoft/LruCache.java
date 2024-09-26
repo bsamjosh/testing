@@ -87,5 +87,31 @@ public class LruCache {
         }
         System.out.println("Input String - "+convertListToString(inputArg1));
         System.out.println("Input String - "+finalizedCache);
+
+//        {"A", "B", "A", "C", "A", "B"}
+
+        String[] inputArg2 = {"A", "B", "A", "C", "A", "B"};
+        String outputArg2 = "C-A-B";
+        finalizedCache = loadCache(inputArg2);
+        if(finalizedCache.equals(outputArg2)){
+            System.out.println("====================Matching========================");
+        } else {
+            System.out.println("====================Not - Matching========================");
+        }
+        System.out.println("Input String - "+convertListToString(inputArg2));
+        System.out.println("Input String - "+finalizedCache);
+
+//        {"A", "B", "C", "D", "E", "D", "Q", "Z", "C"}
+        String[] inputArg3 = {"A", "B", "C", "D", "E", "D", "Q", "Z", "C"};
+        String outputArg3 = "E-D-Q-Z-C";
+        finalizedCache = loadCache(inputArg3);
+        if(finalizedCache.equals(outputArg3)){
+            System.out.println("====================Matching========================");
+        } else {
+            System.out.println("====================Not - Matching========================");
+        }
+        System.out.println("Input String - "+convertListToString(inputArg3));
+        System.out.println("Input String - "+finalizedCache);
+
     }
 }
